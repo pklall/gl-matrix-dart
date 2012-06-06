@@ -1,5 +1,3 @@
-
-
 class Matrix3 {
   
   Float32Array _dest;
@@ -31,7 +29,6 @@ class Matrix3 {
 
   operator []=(int index, num value) => _dest[index] = value;
 
-  
   Float32Array get array()                   => _dest;
                set array(Float32Array array) => _dest = array;
 
@@ -91,5 +88,4 @@ class Matrix3 {
     }
   }
   
-
 }
