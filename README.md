@@ -4,3 +4,5 @@ This is port of gl-matrix JavaScript matrix and vector library for high performa
 
 It's not complete, there are just Vector3 and Matrix4 fully implemented at this moment and I'm not sure I didn't make any bugs while rewriting to Dart (when I see some unit testing library for Dart I'll add tests).
 Also it's performance might not be the same like original pure JavaScript implementation because this port is object-oriented. I'll try to keep it more-or-less up to date but feel free to fork and send pull requests anytime.
+
+I hope this library is only temporary. Dart at this moment doesn't support combining pure JavaScript with Dart code but hopefuly it's one of the upcoming features http://stackoverflow.com/questions/7716004/will-dart-support-the-use-of-existing-javascript-libraries.

@@ -27,9 +27,9 @@ class Matrix4 {
     this.identity();
   }
   
-  operator [](int index) => _dest[index];
+  operator [](num index) => _dest[index];
 
-  operator []=(int index, double value) => _dest[index] = value;
+  operator []=(num index, num value) => _dest[index] = value;
   
   
   Float32Array get array()                   => _dest;
@@ -37,9 +37,6 @@ class Matrix4 {
   
   /**
    * Copies the values of one mat4 to another
-   *
-   * @param {mat4} mat mat4 containing values to copy
-   * @param {mat4} dest mat4 receiving copied values
    *
    * @returns {mat4} dest
    */
@@ -287,19 +284,26 @@ class Matrix4 {
     }
     id = 1 / d;
 
+    var out;
     if (null == dest) {
-      dest = new Matrix3();
+      out = new Matrix3();
+    } else {
+      out = _dest;
     }
 
-    dest[0] = b01 * id;
-    dest[1] = (-a22 * a01 + a02 * a21) * id;
-    dest[2] =  (a12 * a01 - a02 * a11) * id;
-    dest[3] = b11 * id;
-    dest[4] =  (a22 * a00 - a02 * a20) * id;
-    dest[5] = (-a12 * a00 + a02 * a10) * id;
-    dest[6] = b21 * id;
-    dest[7] = (-a21 * a00 + a01 * a20) * id;
-    dest[8] =  (a11 * a00 - a01 * a10) * id;
+    out[0] = b01 * id;
+    out[1] = (-a22 * a01 + a02 * a21) * id;
+    out[2] =  (a12 * a01 - a02 * a11) * id;
+    out[3] = b11 * id;
+    out[4] =  (a22 * a00 - a02 * a20) * id;
+    out[5] = (-a12 * a00 + a02 * a10) * id;
+    out[6] = b21 * id;
+    out[7] = (-a21 * a00 + a01 * a20) * id;
+    out[8] =  (a11 * a00 - a01 * a10) * id;
+    
+    if (null == dest) {
+      return out;
+    }
   }
 
   /**

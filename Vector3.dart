@@ -21,7 +21,7 @@ class Vector3 {
   
   operator [](int index) => _items[index];
 
-  operator []=(int index, double value) => _items[index] = value;
+  operator []=(int index, num value) => _items[index] = value;
 
   Float32Array get array()      => _items;
   set array(Float32Array array) => _items = array;

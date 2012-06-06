@@ -14,7 +14,7 @@ class Vector4 {
   
   operator [](int index) => _items[index];
 
-  operator []=(int index, double value) => _items[index] = value;
+  operator []=(int index, num value) => _items[index] = value;
 
   
 }
