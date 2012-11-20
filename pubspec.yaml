@@ -1,0 +1,3 @@
+name: gl-matrix
+description: A port of gl-matrix JavaScript matrix and vector library for high performance WebGL apps.
+version: 0.0.8
